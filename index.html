@@ -1,0 +1,136 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="./js/index.js"></script>
+	<script src="js/jquery-1.11.3.js"></script>
+</head>
+<style>
+	html,body{
+		width: 100%;
+		height:100%;
+		overflow: hidden;
+		background: url(img/20140313150318_HAGTv.jpeg);
+		background-size: 100% auto;
+		font-family: 'Helvetica';
+	}
+	.sore,.die{
+		width: 15%;
+		height: 30px;
+		font-size: 18px;
+		line-height: 30px;
+		float: left;
+		color:#fff;
+	}
+	.moshi{
+		width:500px;
+		height:400px;
+		position:fixed;
+		top:0;left:0;right:0;bottom: 0;
+		margin:auto auto;
+		background: #000;
+		text-align: center;
+		line-height: 35px;
+		background: url(img/b.jpg)no-repeat 10px;
+	}
+	.ms{
+		width: 160px;
+		height: 35px;
+		position: absolute;
+		left: 160px;
+		background: #DFDDDE;
+		border:1px solid #000;
+		border-radius:5px;
+		cursor: pointer;
+	}
+	.start{
+		top: 170px;
+	}
+	.guanqia{
+		top:205px;
+	}
+	.exit{
+		top:240px;
+	}
+	a{
+		text-decoration: none;
+		color:#000;
+	}
+	.guanqiashu{
+		width: 490px;
+		height: 200px;
+		background: url(img/1370047465917.jpg);
+		position: absolute;
+		left: -150px;
+		top: -100px;
+		display: none;
+	}
+	.guanqiashu span{
+		color:#fff;
+	}
+	.g{
+		width: 80%;
+		height: 60px;
+		position: absolute;
+		top: 90px;
+		padding: 0 50px;
+		border-radius: 5px;
+	}
+	.g span{
+		width: 60px;
+		height: 60px;
+		background: red;
+		display: block;
+		text-align: center;
+		line-height: 60px;
+		margin-right: 5px;
+		float: left;
+		border-radius: 5px;
+	}
+</style>
+<script>
+//	window.onload = function(){
+//		var games = new game();
+//		games.play();
+//	};
+	$(function(){
+		$('.start').click(function(){
+			$('.moshi').css({display:'none'});
+			var games = new game();
+			games.play();
+		})
+		$('.guanqia').click(function(){
+			$('.guanqiashu').css({zIndex:1,display:'block'})
+		})
+		$('.yi').click(function(){
+			$('.moshi').css({display:'none'});
+			var games = new game();
+			games.next();
+		})
+	})
+</script>
+<body>
+<audio src="./musics/1.mp3" id="audio"></audio>
+	<div class="panel">
+		<div class="sore"><span>分数：</span><span>0</span></div>
+		<div class="die"><span>生命：</span><span>10</span></div>
+	</div>
+	<div class="moshi">
+		<div class="ms start">开始游戏</div>
+		<div class="ms guanqia">关卡
+			<div class="guanqiashu">
+				<div class="g">
+					<span class="yi">1</span>
+					<span class="yi">2</span>
+					<span class="yi">3</span>
+					<span class="yi">4</span>
+					<span class="yi">5</span>
+					<span class="yi">6</span>
+				</div>
+			</div>
+		</div>
+		<div class="ms exit"><a href="zairu.html">退出游戏</a></div>
+
+	</div>
+</body>
+</html>
